@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Detalle Hotel{% endblock %}
+{% block content %}
+  <h2>{{ hotel.nombre }}</h2>
+  <p>{{ hotel.descripcion_servicios }}</p>
+  <h3>Habitaciones</h3>
+  <ul>
+    {% for hab in habitaciones %}
+      <li>{{ hab.tipo }} - Capacidad: {{ hab.capacidad_maxima }} - Precio: ${{ hab.precio_base }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

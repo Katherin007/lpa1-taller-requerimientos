@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Hoteles{% endblock %}
+{% block content %}
+  <h2>Listado de Hoteles</h2>
+  <ul>
+    {% for h in hoteles %}
+      <li>
+        <a href="{{ url_for('web.detalle_hotel', hotel_id=h.id) }}">{{ h.nombre }}</a> - {{ h.ubicacion }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
