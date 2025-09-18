@@ -1,2 +1,7 @@
 rich
+Flask>=2.0
+Flask-SQLAlchemy>=3.0
+Flask-Migrate>=4.0
+python-dotenv
+
 
