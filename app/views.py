@@ -35,10 +35,10 @@ def listar_reservas():
     reservas = Reserva.query.all()
     return render_template("reservas.html", reservas=reservas)
 
-@bp.route("/clientes")
-def listar_clientes():
+@bp.route("/cliente")
+def listar_cliente():
     """
     Lista todos los clientes registrados.
     """
-    clientes = Cliente.query.all()
-    return render_template("clientes.html", clientes=clientes)
+    cliente = Cliente.query.all()
+    return render_template("cliente.html", cliente=cliente)
