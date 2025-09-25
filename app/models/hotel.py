@@ -17,7 +17,8 @@ class Hotel(db.Model):
     telefono = db.Column(db.String(50))
     correo = db.Column(db.String(150))
     ubicacion = db.Column(db.String(200))
-    descripcion_servicios = db.Column(db.Text)
+    descripcion_hotel = db.Column(db.Text)
+    servicios = db.Column(db.JSON, default=[])  # lista de servicios en texto
     estado = db.Column(db.String(30), default="activo")  # activo/inactivo
     fotos = db.Column(db.JSON, default=[])  # lista de URLs
     created_at = db.Column(db.DateTime, default=datetime.utcnow)

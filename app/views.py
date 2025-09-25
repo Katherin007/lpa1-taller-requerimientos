@@ -15,7 +15,9 @@ def listar_hoteles():
     """
     Lista todos los hoteles registrados.
     """
+    print("*** Listando hoteles ***")
     hoteles = Hotel.query.all()
+    print("*** datos ***\n", hoteles)
     return render_template("hotels.html", hoteles=hoteles)
 
 @bp.route("/hotel/<int:hotel_id>")

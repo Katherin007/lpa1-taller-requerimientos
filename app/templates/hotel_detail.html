@@ -2,7 +2,26 @@
 {% block title %}Detalle Hotel{% endblock %}
 {% block content %}
   <h2>{{ hotel.nombre }}</h2>
-  <p>{{ hotel.descripcion_servicios }}</p>
+  
+  <p>{{ hotel.descripcion_hotel }}</p>
+  <div>
+    <p><strong>Correo:</strong> {{ hotel.correo }}</p>
+    <p><strong>Teléfono:</strong> {{ hotel.telefono }}</p>
+    <p><strong>Dirección:</strong> {{ hotel.direccion }}</p>
+    <p><strong>Estado:</strong> {{ hotel.estado }}</p>
+    <p><strong>Servicios:</strong>
+      {% for servicio, sino in hotel.servicios.items(): %}
+        {% if sino=="si": %}{{ servicio }}{% if not loop.last %}, {% endif %}{% endif %}
+      {% endfor %}
+    </p>
+  <h3>Fotos del Hotel</h3>
+  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+    {% for foto in hotel.fotos %}
+      <img src="{{ url_for('static', filename=foto) }}" 
+           alt="Foto del hotel" 
+           style="width: 200px; height: auto; border-radius: 8px;">
+    {% endfor %}
+  </div>
   <h3>Habitaciones</h3>
   <ul>
     {% for hab in habitaciones %}
