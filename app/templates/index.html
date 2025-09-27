@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Inicio{% endblock %}
-{% block content %}
-  <h2>Bienvenido al Sistema de Gestión de Reservas</h2>
-  <p>Selecciona una opción del menú para comenzar.</p>
-{% endblock %}
+ {% block title %}Inicio{% endblock %} 
+ 
+<section class="hero" 
+  style="background: url({{ url_for('static', filename='jamaica.png') }}) no-repeat center center; background-size: cover;">
+  <div class="search-box text-center text-white">
+    <h2>Bienvenido al Sistema de Gestión de Reservas</h2>
+    <p>Selecciona una opción del menú para comenzar.</p>
+  </div>
+</section>

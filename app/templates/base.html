@@ -4,22 +4,86 @@
   <meta charset="UTF-8">
   <title>{% block title %}SGRH{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!-- Bootstrap (para estilos rápidos) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Logo más grande */
+    .navbar-brand img {
+      height: 80px; /* aumentamos tamaño */
+      margin-right: 10px;
+    }
+
+    /* Texto del logo (nombre + subtítulo) */
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      color: white;
+    }
+    .brand-text h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .brand-text h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    /* Navbar más delgada */
+    .navbar {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+
+    
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Sistema de Gestión de Reservas Hoteleras</h1>
-    <nav>
-      <a href="{{ url_for('web.index') }}">Inicio</a>
-      <a href="{{ url_for('web.listar_hoteles') }}">Hoteles</a>
-      <a href="{{ url_for('web.listar_reservas') }}">Reservas</a>
-      <a href="{{ url_for('web.listar_cliente') }}">Clientes</a>
-    </nav>
-  </header>
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <!-- Logo + nombre -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="{{ url_for('static', filename='logo1.png') }}" alt="Rover Logo">
+        <div class="brand-text">
+          <h1>ROVER</h1>
+          <h3>Reservas hoteleras</h3>
+        </div>
+      </a>
+
+      <!-- Menú en horizontal -->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <li class="nav-item mx-2"><a class="nav-link text-white" href="{{ url_for('web.index') }}">Inicio</a></li>
+          <li class="nav-item mx-2"><a class="nav-link text-white" href="{{ url_for('web.listar_hoteles') }}">Hoteles</a></li>
+          <li class="nav-item mx-2"><a class="nav-link text-white" href="{{ url_for('web.listar_reservas') }}">Reservas</a></li>
+          <li class="nav-item mx-2"><a class="nav-link text-white" href="{{ url_for('web.listar_cliente') }}">Clientes</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🔹 CONTENIDO -->
   <main>
     {% block content %}{% endblock %}
   </main>
+
+  <!-- 🔹 FOOTER -->
   <footer>
     <p>&copy; 2025 - Agencia de Viajes</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
