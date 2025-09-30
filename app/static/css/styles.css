@@ -29,16 +29,24 @@ footer {
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
 }
+/* /static/css/styles.css */
+
+/* Este código DEBE estar en /static/css/styles.css */
+
 .hero {
-  background: url("../jamaica.png") no-repeat center center;
-  background-size: cover;
-  height: 70vh;           /* Altura del área de bienvenida */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    /* Propiedades que no cambian */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* Esto es clave para que cubra todo el espacio */
+    min-height: 50vh; /* Esto es clave para darle altura */
+    padding: 50px 0;
+    
+    /* Centrado opcional para el texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Asegura que el texto sea legible */
 }
 
 .search-box {
